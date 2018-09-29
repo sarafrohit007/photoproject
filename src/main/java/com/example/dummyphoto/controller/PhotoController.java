@@ -3,6 +3,7 @@ package com.example.dummyphoto.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/api")
@@ -21,14 +22,14 @@ public class PhotoController {
 		return "Success1";
 	}
 	
-	@RequestMapping("/")
+	@RequestMapping("/index")
 	public String indexPage(){
-		return "index";
+		return "views/index";
 	}
 	
 	@RequestMapping("/next")
 	public String nextPage(){
-		return "next";
+		return "views/next";
 	}
 	
 }
