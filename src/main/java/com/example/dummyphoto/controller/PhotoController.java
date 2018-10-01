@@ -1,5 +1,6 @@
 package com.example.dummyphoto.controller;
 
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -23,8 +24,11 @@ public class PhotoController {
 	}
 	
 	@RequestMapping("/index")
-	public String indexPage(){
-		return "views/index";
+	public ModelAndView indexPage(){
+		System.out.println("Printing result....");
+		ModelAndView mav = new ModelAndView("views/index");
+		mav.addObject("message", "Rohit Saraf");
+		return mav;
 	}
 	
 	@RequestMapping("/next")

@@ -1,12 +1,12 @@
 
-spring.thymeleaf.cache: false
-spring.thymeleaf.check-template: true
-spring.thymeleaf.check-template-location: true
-spring.thymeleaf.enabled: true
-spring.thymeleaf.encoding: UTF-8
+#spring.thymeleaf.cache: false
+#spring.thymeleaf.check-template: true
+#spring.thymeleaf.check-template-location: true
+#spring.thymeleaf.enabled: true
+#spring.thymeleaf.encoding: UTF-8
     # excluded-view-names:
     # mode: HTML5
-spring.thymeleaf.prefix: classpath:/templates/
-spring.thymeleaf.suffix: .jsp
+#spring.thymeleaf.prefix: classpath:/templates/
+#spring.thymeleaf.suffix: .jsp
     # template-resolver-order:
     # view-names:
