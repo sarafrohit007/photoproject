@@ -25,7 +25,7 @@ public class PhotoController {
 	
 	@RequestMapping("/index")
 	public ModelAndView indexPage(){
-		System.out.println("Printing result....");
+		System.out.println("Printing IndexPage....");
 		ModelAndView mav = new ModelAndView("views/index");
 		mav.addObject("message", "Rohit Saraf");
 		return mav;
@@ -34,6 +34,11 @@ public class PhotoController {
 	@RequestMapping("/next")
 	public String nextPage(){
 		return "views/next";
+	}
+	
+	@RequestMapping(value="/invalidsession")
+	public String invalidSession(){
+		return "views/invalidsession";
 	}
 	
 }
