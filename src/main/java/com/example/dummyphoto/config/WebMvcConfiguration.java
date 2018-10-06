@@ -12,7 +12,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.session.HttpSessionEventPublisher;
 
-import com.example.dummyphoto.util.Constants;
 
 @Configuration
 @EnableWebSecurity

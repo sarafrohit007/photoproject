@@ -41,4 +41,10 @@ public class PhotoController {
 		return "views/invalidsession";
 	}
 	
+	@RequestMapping("/login")
+	public String login(){
+		System.out.println("Inside Login Page....");
+		return "views/google-login";
+	}
+	
 }
