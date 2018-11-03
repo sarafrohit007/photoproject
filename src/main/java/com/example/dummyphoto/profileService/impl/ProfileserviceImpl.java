@@ -4,4 +4,9 @@ import com.example.dummyphoto.profileService.IProfileService;
 
 public class ProfileserviceImpl implements IProfileService{
 
+	@Override
+	public void getUserProfile() {
+		
+	}
+
 }
