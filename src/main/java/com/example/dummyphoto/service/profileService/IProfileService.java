@@ -7,4 +7,8 @@ public interface IProfileService {
 
 	PhotoGrapherProfileResponseDTO getUserProfile(PhotoGrapherProfileRequestDTO request);
 
+	void updateUserProfile();
+
+	void createUserProfile();
+
 }
