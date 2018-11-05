@@ -1,4 +1,4 @@
-package com.example.dummyphoto.profileService;
+package com.example.dummyphoto.service.profileService;
 
 import com.example.dummyphoto.dto.profile.PhotoGrapherProfileRequestDTO;
 

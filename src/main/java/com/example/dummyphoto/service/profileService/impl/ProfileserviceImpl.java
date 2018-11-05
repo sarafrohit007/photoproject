@@ -1,7 +1,8 @@
-package com.example.dummyphoto.profileService.impl;
+package com.example.dummyphoto.service.profileService.impl;
 
 import com.example.dummyphoto.dto.profile.PhotoGrapherProfileRequestDTO;
-import com.example.dummyphoto.profileService.IProfileService;
+import com.example.dummyphoto.service.profileService.IProfileService;
+
 
 public class ProfileserviceImpl implements IProfileService{
 
