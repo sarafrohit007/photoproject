@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.dummyphoto.dto.profile.PhotoGrapherProfileRequestDTO;
 import com.example.dummyphoto.dto.profile.PhotoGrapherProfileResponseDTO;
-import com.example.dummyphoto.profileService.IProfileService;
+import com.example.dummyphoto.model.PhotoGrapher;
+import com.example.dummyphoto.service.profileService.IProfileService;
+
 
 @Controller
 @RequestMapping("/profile")
