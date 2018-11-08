@@ -14,6 +14,8 @@ public class PhotoGrapherProfileRequestDTO implements Serializable {
 
 	private String googleEmailId;
 
+	private String facebookEmailId;
+
 	public String getGoogleEmailId() {
 		return googleEmailId;
 	}
@@ -22,9 +24,18 @@ public class PhotoGrapherProfileRequestDTO implements Serializable {
 		this.googleEmailId = googleEmailId;
 	}
 
+	public String getFacebookEmailId() {
+		return facebookEmailId;
+	}
+
+	public void setFacebookEmailId(String facebookEmailId) {
+		this.facebookEmailId = facebookEmailId;
+	}
+
 	@Override
 	public String toString() {
-		return "PhotoGrapherProfileRequestDTO [googleEmailId=" + googleEmailId + "]";
+		return "PhotoGrapherProfileRequestDTO [googleEmailId=" + googleEmailId + ", facebookEmailId=" + facebookEmailId
+				+ "]";
 	}
 
 }

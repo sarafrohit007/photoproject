@@ -26,6 +26,8 @@ public class PhotoGrapher implements Serializable {
 
 	private AddressDetail addressDetail;
 	
+	private LoginDetail loginDetail;
+	
 	public Integer getId() {
 		return id;
 	}
