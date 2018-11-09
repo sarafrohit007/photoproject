@@ -4,6 +4,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 
 import java.io.Serializable;
 import java.math.BigInteger;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -27,12 +28,16 @@ public class Content_Info implements Serializable {
 	private String mediaPath;
 
 	private MediaType mediaType;
-	
+
 	private BigInteger fileSize;
 
+	private Set<LikeInfo> likeInfoList;
+
+	private Set<CommentInfo> commentsInfoList;
+
 	@Id
-    @GeneratedValue(strategy = IDENTITY)
-    @Column(name = "id", unique = true, nullable = false)
+	@GeneratedValue(strategy = IDENTITY)
+	@Column(name = "id", unique = true, nullable = false)
 	public Integer getId() {
 		return id;
 	}
@@ -58,7 +63,7 @@ public class Content_Info implements Serializable {
 		this.mediaType = mediaType;
 	}
 
-	@Column(name = "file_size", nullable = false)
+	@Column(name = "file_size", nullable = false, columnDefinition = "int(16)")
 	public BigInteger getFileSize() {
 		return fileSize;
 	}
@@ -66,7 +71,21 @@ public class Content_Info implements Serializable {
 	public void setFileSize(BigInteger fileSize) {
 		this.fileSize = fileSize;
 	}
-	
-	
+
+	public Set<LikeInfo> getLikeInfoList() {
+		return likeInfoList;
+	}
+
+	public void setLikeInfoList(Set<LikeInfo> likeInfoList) {
+		this.likeInfoList = likeInfoList;
+	}
+
+	public Set<CommentInfo> getCommentsInfoList() {
+		return commentsInfoList;
+	}
+
+	public void setCommentsInfoList(Set<CommentInfo> commentsInfoList) {
+		this.commentsInfoList = commentsInfoList;
+	}
 
 }
