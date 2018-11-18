@@ -20,7 +20,7 @@ public class ProfileController {
 	@Autowired
 	private IProfileService profileService;
 
-	@RequestMapping(method = RequestMethod.POST, value = "getuserprofile")
+	@RequestMapping(method = RequestMethod.GET, value = "getuserprofile")
 	@Produces(MediaType.APPLICATION_JSON)
 	public PhotoGrapherProfileResponseDTO getPhotoGrapher(@RequestBody PhotoGrapherProfileRequestDTO request) {
 		PhotoGrapherProfileResponseDTO photoGrapherProfile = profileService.getUserProfile(request);

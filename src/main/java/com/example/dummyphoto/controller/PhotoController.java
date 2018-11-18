@@ -1,6 +1,8 @@
 package com.example.dummyphoto.controller;
 
 
+import java.io.Serializable;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -8,7 +10,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/api")
-public class PhotoController {
+public class PhotoController implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2956917481872280430L;
 
 	@RequestMapping("/result")
 	@ResponseBody
