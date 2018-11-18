@@ -4,6 +4,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
 import com.example.dummyphoto.dao.IProfileDao;
+import com.example.dummyphoto.model.PhotoGrapher;
 
 @Repository("profileDaoImpl")
 public class ProfileDaoImpl implements IProfileDao {
@@ -21,6 +22,11 @@ public class ProfileDaoImpl implements IProfileDao {
 	@Override
 	public void getUserByGMailLogin() {
 		
+	}
+
+	@Override
+	public PhotoGrapher getUserByUserId(Integer userId) {
+		return null;
 	}
 
 }

@@ -1,6 +1,5 @@
 package com.example.dummyphoto.controller;
 
-import java.io.File;
 import java.io.IOException;
 
 import org.slf4j.Logger;
@@ -30,8 +29,6 @@ public class ServiceController {
 	public String uploadDocument(@RequestParam("uploadedFile") MultipartFile file) {
 		try {
 			FileUtils.upload(file.getInputStream(), file.getContentType(), "");
-			// amazonStorageService.uploadFileWithPublicAccess(contentPath, new
-			// File(uploadFilePath), file.getContentType());
 			amazonService.uploadFile("", null, "", null);
 		} catch (IOException e) {
 			LOG.error("error uploading pan details");

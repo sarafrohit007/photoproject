@@ -3,6 +3,7 @@ package com.example.dummyphoto.model;
 import static javax.persistence.GenerationType.IDENTITY;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -30,9 +31,13 @@ public class User_Following_Information implements Serializable {
 
 	private boolean status;
 
+	private Date followedDate;
+
+	private Date updated;
+
 	@Id
-    @GeneratedValue(strategy = IDENTITY)
-    @Column(name = "id", unique = true, nullable = false)
+	@GeneratedValue(strategy = IDENTITY)
+	@Column(name = "id", unique = true, nullable = false)
 	public Integer getId() {
 		return id;
 	}
@@ -42,7 +47,7 @@ public class User_Following_Information implements Serializable {
 	}
 
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "followingUser",nullable=false)
+	@JoinColumn(name = "followingUser", nullable = false)
 	public PhotoGrapher getFollowingUser() {
 		return followingUser;
 	}
@@ -52,7 +57,7 @@ public class User_Following_Information implements Serializable {
 	}
 
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "followedUser",nullable=false)
+	@JoinColumn(name = "followedUser", nullable = false)
 	public PhotoGrapher getFollowedUser() {
 		return followedUser;
 	}
@@ -60,14 +65,30 @@ public class User_Following_Information implements Serializable {
 	public void setFollowedUser(PhotoGrapher followedUser) {
 		this.followedUser = followedUser;
 	}
-	
-	@Column(name = "status",nullable=false)
+
+	@Column(name = "status", nullable = false)
 	public boolean isStatus() {
 		return status;
 	}
 
 	public void setStatus(boolean status) {
 		this.status = status;
+	}
+
+	public Date getFollowedDate() {
+		return followedDate;
+	}
+
+	public void setFollowedDate(Date followedDate) {
+		this.followedDate = followedDate;
+	}
+
+	public Date getUpdated() {
+		return updated;
+	}
+
+	public void setUpdated(Date updated) {
+		this.updated = updated;
 	}
 
 }

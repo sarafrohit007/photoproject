@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.dummyphoto.dto.home.HomeContentResponseDTO;
 import com.example.dummyphoto.dto.home.HomecontentRequestDTO;
-import com.example.dummyphoto.dto.profile.PhotoGrapherProfileRequestDTO;
-import com.example.dummyphoto.dto.profile.PhotoGrapherProfileResponseDTO;
 import com.example.dummyphoto.service.homeservice.IHomeService;
 
 @Controller
