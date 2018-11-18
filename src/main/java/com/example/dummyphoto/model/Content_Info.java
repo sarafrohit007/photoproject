@@ -4,6 +4,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 
 import java.io.Serializable;
 import java.math.BigInteger;
+import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -34,6 +35,12 @@ public class Content_Info implements Serializable {
 	private Set<LikeInfo> likeInfoList;
 
 	private Set<CommentInfo> commentsInfoList;
+
+	private Date posted;
+
+	private Date updated;
+
+	private PhotoGrapher postedBy;
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
@@ -86,6 +93,30 @@ public class Content_Info implements Serializable {
 
 	public void setCommentsInfoList(Set<CommentInfo> commentsInfoList) {
 		this.commentsInfoList = commentsInfoList;
+	}
+
+	public Date getPosted() {
+		return posted;
+	}
+
+	public void setPosted(Date posted) {
+		this.posted = posted;
+	}
+
+	public Date getUpdated() {
+		return updated;
+	}
+
+	public void setUpdated(Date updated) {
+		this.updated = updated;
+	}
+
+	public PhotoGrapher getPostedBy() {
+		return postedBy;
+	}
+
+	public void setPostedBy(PhotoGrapher postedBy) {
+		this.postedBy = postedBy;
 	}
 
 }
