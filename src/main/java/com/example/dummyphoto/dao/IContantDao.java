@@ -7,6 +7,6 @@ import com.example.dummyphoto.model.PhotoGrapher;
 
 public interface IContantDao {
 
-	List<Content_Info> getUsersContent(List<PhotoGrapher> followedList);
+	List<Content_Info> getUsersContent(List<PhotoGrapher> followedList, Integer startCount);
 
 }

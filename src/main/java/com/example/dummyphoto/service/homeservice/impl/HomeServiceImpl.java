@@ -29,7 +29,7 @@ public class HomeServiceImpl implements IHomeService{
 		Integer userId = Integer.parseInt(request.getUserId());
 		PhotoGrapher photoGrapher = profileDao.getUserByUserId(userId);
 		List<PhotoGrapher> followedList = userFollowDao.getUserFollowingList(photoGrapher);
-		List<Content_Info> contentInfoList = contentService.getPhotographersContent(followedList);
+		List<Content_Info> contentInfoList = contentService.getPhotographersContent(followedList,request);
 		return null;
 	}
 
