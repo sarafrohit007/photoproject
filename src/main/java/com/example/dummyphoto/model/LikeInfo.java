@@ -30,8 +30,8 @@ public class LikeInfo implements Serializable {
 	private Content_Info contentInfo;
 
 	@Id
-    @GeneratedValue(strategy = IDENTITY)
-    @Column(name = "id", unique = true, nullable = false)
+	@GeneratedValue(strategy = IDENTITY)
+	@Column(name = "id", unique = true, nullable = false)
 	public Integer getId() {
 		return id;
 	}
@@ -40,7 +40,7 @@ public class LikeInfo implements Serializable {
 		this.id = id;
 	}
 
-	@Column(name = "likedAt",nullable=false)
+	@Column(name = "likedAt", nullable = false)
 	public Date getLikedAt() {
 		return likedAt;
 	}
@@ -49,7 +49,7 @@ public class LikeInfo implements Serializable {
 		this.likedAt = likedAt;
 	}
 
-	@Column(name = "updatedAt",nullable=false)
+	@Column(name = "updatedAt", nullable = false)
 	public Date getUpdatedAt() {
 		return updatedAt;
 	}
@@ -58,7 +58,7 @@ public class LikeInfo implements Serializable {
 		this.updatedAt = updatedAt;
 	}
 
-	@Column(name = "status",nullable=false)
+	@Column(name = "status", nullable = false)
 	public boolean isStatus() {
 		return status;
 	}
@@ -68,13 +68,19 @@ public class LikeInfo implements Serializable {
 	}
 
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "contentInfo",nullable=false)
+	@JoinColumn(name = "contentInfo", nullable = false)
 	public Content_Info getContentInfo() {
 		return contentInfo;
 	}
 
 	public void setContentInfo(Content_Info contentInfo) {
 		this.contentInfo = contentInfo;
+	}
+
+	@Override
+	public String toString() {
+		return "LikeInfo [id=" + id + ", likedAt=" + likedAt + ", updatedAt=" + updatedAt + ", status=" + status
+				+ ", contentInfo=" + contentInfo + "]";
 	}
 
 }

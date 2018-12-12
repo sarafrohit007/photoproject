@@ -3,12 +3,15 @@ package com.example.dummyphoto.model;
 import static javax.persistence.GenerationType.IDENTITY;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -26,7 +29,7 @@ public class CityDetail implements Serializable {
 
 	private StateDetail stateDetail;
 
-	private List<PincodeDetail> pinCodesList;
+	private Set<PincodeDetail> pinCodesList;
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
@@ -39,6 +42,7 @@ public class CityDetail implements Serializable {
 		this.id = id;
 	}
 
+	@Column(name = "name", nullable = false)
 	public String getName() {
 		return name;
 	}
@@ -47,6 +51,8 @@ public class CityDetail implements Serializable {
 		this.name = name;
 	}
 
+	@Column(name = "state_detail", nullable = false)
+	@ManyToOne(fetch = FetchType.EAGER)
 	public StateDetail getStateDetail() {
 		return stateDetail;
 	}
@@ -55,12 +61,20 @@ public class CityDetail implements Serializable {
 		this.stateDetail = stateDetail;
 	}
 
-	public List<PincodeDetail> getPinCodesList() {
+	@Column(name = "pin_codes_list", nullable = false)
+	@OneToMany(fetch = FetchType.LAZY)
+	public Set<PincodeDetail> getPinCodesList() {
 		return pinCodesList;
 	}
 
-	public void setPinCodesList(List<PincodeDetail> pinCodesList) {
+	public void setPinCodesList(Set<PincodeDetail> pinCodesList) {
 		this.pinCodesList = pinCodesList;
+	}
+
+	@Override
+	public String toString() {
+		return "CityDetail [id=" + id + ", name=" + name + ", stateDetail=" + stateDetail + ", pinCodesList="
+				+ pinCodesList + "]";
 	}
 
 }

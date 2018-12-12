@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 public class CommentInfo implements Serializable {
 
@@ -46,7 +47,7 @@ public class CommentInfo implements Serializable {
 	}
 
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "followingUser",nullable=false)
+	@Column(name = "followingUser")
 	public CommentInfo getParentId() {
 		return parentId;
 	}
@@ -55,6 +56,8 @@ public class CommentInfo implements Serializable {
 		this.parentId = parentId;
 	}
 
+	@OneToMany(fetch = FetchType.LAZY)
+	@Column(name = "child_comments_list")
 	public Set<CommentInfo> getChildCommentsList() {
 		return childCommentsList;
 	}
@@ -63,6 +66,7 @@ public class CommentInfo implements Serializable {
 		this.childCommentsList = childCommentsList;
 	}
 
+	@Column(name = "postedat")
 	public Date getPostedAt() {
 		return postedAt;
 	}
@@ -71,6 +75,7 @@ public class CommentInfo implements Serializable {
 		this.postedAt = postedAt;
 	}
 
+	@OneToMany(fetch = FetchType.LAZY)
 	public Set<PhotoGrapher> getLikedBy() {
 		return likedBy;
 	}
@@ -79,6 +84,7 @@ public class CommentInfo implements Serializable {
 		this.likedBy = likedBy;
 	}
 
+	@Column(name = "updatedat")
 	public Date getUpdatedAt() {
 		return updatedAt;
 	}
@@ -87,12 +93,21 @@ public class CommentInfo implements Serializable {
 		this.updatedAt = updatedAt;
 	}
 
+	@Column(name = "content_info")
+	@ManyToOne(fetch = FetchType.EAGER)
 	public Content_Info getContentInfo() {
 		return contentInfo;
 	}
 
 	public void setContentInfo(Content_Info contentInfo) {
 		this.contentInfo = contentInfo;
+	}
+
+	@Override
+	public String toString() {
+		return "CommentInfo [id=" + id + ", parentId=" + parentId + ", childCommentsList=" + childCommentsList
+				+ ", postedAt=" + postedAt + ", likedBy=" + likedBy + ", updatedAt=" + updatedAt + ", contentInfo="
+				+ contentInfo + "]";
 	}
 
 }

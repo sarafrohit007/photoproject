@@ -75,6 +75,7 @@ public class User_Following_Information implements Serializable {
 		this.status = status;
 	}
 
+	@Column(name = "followed_date")
 	public Date getFollowedDate() {
 		return followedDate;
 	}
@@ -83,12 +84,19 @@ public class User_Following_Information implements Serializable {
 		this.followedDate = followedDate;
 	}
 
+	@Column(name = "updated")
 	public Date getUpdated() {
 		return updated;
 	}
 
 	public void setUpdated(Date updated) {
 		this.updated = updated;
+	}
+
+	@Override
+	public String toString() {
+		return "User_Following_Information [id=" + id + ", followingUser=" + followingUser + ", followedUser="
+				+ followedUser + ", status=" + status + ", followedDate=" + followedDate + ", updated=" + updated + "]";
 	}
 
 }

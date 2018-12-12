@@ -6,8 +6,10 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -32,6 +34,8 @@ public class AddressDetail implements Serializable {
 		this.id = id;
 	}
 
+	@ManyToOne(fetch = FetchType.EAGER)
+	@Column(name = "city_detail", nullable = false)
 	public CityDetail getCityDetail() {
 		return cityDetail;
 	}

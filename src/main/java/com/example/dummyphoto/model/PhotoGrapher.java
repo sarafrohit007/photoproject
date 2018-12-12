@@ -30,7 +30,7 @@ public class PhotoGrapher implements Serializable {
 
 	private Float rating;
 
-	private PhotographerType photographerType;
+	private String photographerType;
 
 	private AddressDetail addressDetail;
 
@@ -67,11 +67,12 @@ public class PhotoGrapher implements Serializable {
 		this.rating = rating;
 	}
 
-	public PhotographerType getPhotographerType() {
+	@Column(name = "photographer_type", nullable = false)
+	public String getPhotographerType() {
 		return photographerType;
 	}
 
-	public void setPhotographerType(PhotographerType photographerType) {
+	public void setPhotographerType(String photographerType) {
 		this.photographerType = photographerType;
 	}
 
@@ -102,6 +103,13 @@ public class PhotoGrapher implements Serializable {
 
 	public void setNumberOfReviews(Integer numberOfReviews) {
 		this.numberOfReviews = numberOfReviews;
+	}
+
+	@Override
+	public String toString() {
+		return "PhotoGrapher [id=" + id + ", isCommercial=" + isCommercial + ", rating=" + rating
+				+ ", photographerType=" + photographerType + ", addressDetail=" + addressDetail + ", loginDetail="
+				+ loginDetail + ", numberOfReviews=" + numberOfReviews + "]";
 	}
 
 }

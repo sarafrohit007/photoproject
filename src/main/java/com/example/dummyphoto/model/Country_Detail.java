@@ -11,8 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="country_detail",catalog="address")
-public class Country_Detail implements Serializable{
+@Table(name = "country_detail", catalog = "address")
+public class Country_Detail implements Serializable {
 
 	/**
 	 * @author rohitsaraf
@@ -20,9 +20,9 @@ public class Country_Detail implements Serializable{
 	private static final long serialVersionUID = -273332354699780924L;
 
 	private Integer id;
-	
+
 	private String name;
-	
+
 	private boolean isServed;
 
 	@Id
@@ -36,6 +36,7 @@ public class Country_Detail implements Serializable{
 		this.id = id;
 	}
 
+	@Column(name = "name", nullable = false)
 	public String getName() {
 		return name;
 	}
@@ -44,6 +45,7 @@ public class Country_Detail implements Serializable{
 		this.name = name;
 	}
 
+	@Column(name = "isServed", nullable = false)
 	public boolean isServed() {
 		return isServed;
 	}
@@ -51,7 +53,5 @@ public class Country_Detail implements Serializable{
 	public void setServed(boolean isServed) {
 		this.isServed = isServed;
 	}
-	
-	
-	
+
 }

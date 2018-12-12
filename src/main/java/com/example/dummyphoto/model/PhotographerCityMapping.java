@@ -3,12 +3,15 @@ package com.example.dummyphoto.model;
 import static javax.persistence.GenerationType.IDENTITY;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -24,7 +27,7 @@ public class PhotographerCityMapping implements Serializable {
 
 	private PhotoGrapher photgrapher;
 
-	private List<CityDetail> citiesServed;
+	private Set<CityDetail> citiesServed;
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
@@ -37,6 +40,8 @@ public class PhotographerCityMapping implements Serializable {
 		this.id = id;
 	}
 
+	@ManyToOne(fetch = FetchType.EAGER)
+	@Column(name = "photographer")
 	public PhotoGrapher getPhotgrapher() {
 		return photgrapher;
 	}
@@ -45,12 +50,22 @@ public class PhotographerCityMapping implements Serializable {
 		this.photgrapher = photgrapher;
 	}
 
-	public List<CityDetail> getCitiesServed() {
+	@OneToMany(fetch = FetchType.LAZY)
+	@Column(name  = "cities_served")
+	public Set<CityDetail> getCitiesServed() {
 		return citiesServed;
 	}
 
-	public void setCitiesServed(List<CityDetail> citiesServed) {
+	public void setCitiesServed(Set<CityDetail> citiesServed) {
 		this.citiesServed = citiesServed;
 	}
+
+	@Override
+	public String toString() {
+		return "PhotographerCityMapping [id=" + id + ", photgrapher=" + photgrapher + ", citiesServed=" + citiesServed
+				+ "]";
+	}
+	
+	
 
 }

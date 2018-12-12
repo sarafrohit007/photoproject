@@ -34,6 +34,7 @@ public class StateDetail implements Serializable {
 		this.id = id;
 	}
 
+	@Column(name = "name")
 	public String getName() {
 		return name;
 	}
@@ -41,5 +42,12 @@ public class StateDetail implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	@Override
+	public String toString() {
+		return "StateDetail [id=" + id + ", name=" + name + "]";
+	}
+	
+	
 
 }

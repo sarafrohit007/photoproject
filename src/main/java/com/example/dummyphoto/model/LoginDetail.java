@@ -39,6 +39,7 @@ public class LoginDetail implements Serializable {
 		this.id = id;
 	}
 
+	@Column(name = "gmailid")
 	public String getGmailId() {
 		return gmailId;
 	}
@@ -47,6 +48,7 @@ public class LoginDetail implements Serializable {
 		this.gmailId = gmailId;
 	}
 
+	@Column(name = "facebook_login_id")
 	public String getFacebookLoginId() {
 		return facebookLoginId;
 	}
@@ -55,6 +57,7 @@ public class LoginDetail implements Serializable {
 		this.facebookLoginId = facebookLoginId;
 	}
 
+	@Column(name = "last_login_at")
 	public Date getLastLoginAt() {
 		return lastLoginAt;
 	}
