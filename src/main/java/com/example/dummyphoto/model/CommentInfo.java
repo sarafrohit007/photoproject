@@ -7,13 +7,17 @@ import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "comment_info", catalog = "photo")
 public class CommentInfo implements Serializable {
 
 	/**
@@ -47,7 +51,7 @@ public class CommentInfo implements Serializable {
 	}
 
 	@ManyToOne(fetch = FetchType.EAGER)
-	@Column(name = "followingUser")
+	@JoinColumn(name = "following_User")
 	public CommentInfo getParentId() {
 		return parentId;
 	}
@@ -93,7 +97,7 @@ public class CommentInfo implements Serializable {
 		this.updatedAt = updatedAt;
 	}
 
-	@Column(name = "content_info")
+	@JoinColumn(name = "content_info")
 	@ManyToOne(fetch = FetchType.EAGER)
 	public Content_Info getContentInfo() {
 		return contentInfo;

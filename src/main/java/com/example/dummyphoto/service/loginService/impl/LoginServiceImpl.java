@@ -7,7 +7,7 @@ import com.example.dummyphoto.dao.IProfileDao;
 import com.example.dummyphoto.service.loginService.ILoginService;
 import com.example.dummyphoto.service.util.StringUtils;
 
-@Service
+@Service("loginServiceImpl")
 public class LoginServiceImpl implements ILoginService {
 	
 	@Autowired

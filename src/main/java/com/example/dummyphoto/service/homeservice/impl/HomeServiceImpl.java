@@ -3,6 +3,7 @@ package com.example.dummyphoto.service.homeservice.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.example.dummyphoto.dao.IProfileDao;
 import com.example.dummyphoto.dao.IUserFollowDao;
@@ -13,6 +14,7 @@ import com.example.dummyphoto.model.PhotoGrapher;
 import com.example.dummyphoto.service.contentservice.IContentService;
 import com.example.dummyphoto.service.homeservice.IHomeService;
 
+@Service("homeServiceImpl")
 public class HomeServiceImpl implements IHomeService{
 	
 	@Autowired

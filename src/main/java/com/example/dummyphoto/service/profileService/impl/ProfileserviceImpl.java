@@ -3,12 +3,14 @@ package com.example.dummyphoto.service.profileService.impl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.example.dummyphoto.dto.profile.PhotoGrapherProfileRequestDTO;
 import com.example.dummyphoto.dto.profile.PhotoGrapherProfileResponseDTO;
 import com.example.dummyphoto.service.loginService.ILoginService;
 import com.example.dummyphoto.service.profileService.IProfileService;
 
+@Service("profileServiceImpl")
 public class ProfileserviceImpl implements IProfileService {
 
 	private static final Logger LOG = LoggerFactory.getLogger(ProfileserviceImpl.class);

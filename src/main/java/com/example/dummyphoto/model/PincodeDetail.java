@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -48,7 +49,7 @@ public class PincodeDetail implements Serializable {
 	}
 
 	@ManyToOne(fetch = FetchType.EAGER)
-	@Column(name = "city_detail")
+	@JoinColumn(name = "city_detail")
 	public CityDetail getCityDetail() {
 		return cityDetail;
 	}

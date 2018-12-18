@@ -12,8 +12,11 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
 import org.hibernate.type.descriptor.java.JavaTypeDescriptorRegistry.FallbackJavaTypeDescriptor;
@@ -84,9 +87,9 @@ public class Content_Info implements Serializable {
 	public void setFileSize(BigInteger fileSize) {
 		this.fileSize = fileSize;
 	}
-
-	@Column(name = "like_info_list")
+	
 	@OneToMany(fetch = FetchType.LAZY)
+	@OrderBy("id asc")
 	public Set<LikeInfo> getLikeInfoList() {
 		return likeInfoList;
 	}
@@ -94,9 +97,10 @@ public class Content_Info implements Serializable {
 	public void setLikeInfoList(Set<LikeInfo> likeInfoList) {
 		this.likeInfoList = likeInfoList;
 	}
-
-	@Column(name = "comments_info_list")
+	
+	
 	@OneToMany(fetch = FetchType.LAZY)
+	@OrderBy("id asc")
 	public Set<CommentInfo> getCommentsInfoList() {
 		return commentsInfoList;
 	}
@@ -123,7 +127,7 @@ public class Content_Info implements Serializable {
 		this.updated = updated;
 	}
 
-	@Column(name = "posted_by")
+	@JoinColumn(name = "posted_by")
 	@ManyToOne(fetch = FetchType.EAGER)
 	public PhotoGrapher getPostedBy() {
 		return postedBy;

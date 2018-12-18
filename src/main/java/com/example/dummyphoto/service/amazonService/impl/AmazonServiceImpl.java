@@ -4,6 +4,7 @@ import java.io.File;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
@@ -16,6 +17,7 @@ import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.example.dummyphoto.service.amazonService.IAmazonService;
 
+@Service("amazonServiceImpl")
 public class AmazonServiceImpl implements IAmazonService {
 
 	private static final Logger LOG = LoggerFactory.getLogger(AmazonServiceImpl.class);

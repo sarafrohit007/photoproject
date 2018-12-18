@@ -12,7 +12,7 @@ import com.example.dummyphoto.model.Content_Info;
 import com.example.dummyphoto.model.PhotoGrapher;
 import com.example.dummyphoto.service.contentservice.IContentService;
 
-@Service
+@Service("contentServiceImpl")
 public class ContentServiceImpl implements IContentService{
 
 	@Autowired

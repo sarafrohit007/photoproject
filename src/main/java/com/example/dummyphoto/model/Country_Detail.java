@@ -54,4 +54,9 @@ public class Country_Detail implements Serializable {
 		this.isServed = isServed;
 	}
 
+	@Override
+	public String toString() {
+		return "Country_Detail [id=" + id + ", name=" + name + ", isServed=" + isServed + "]";
+	}
+
 }
